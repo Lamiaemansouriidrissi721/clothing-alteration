@@ -1,0 +1,27 @@
+CREATE TABLE clothes (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    type TEXT,
+    design TEXT);
+    
+INSERT INTO clothes (type, design)
+    VALUES ("dress", "pink polka dots");
+INSERT INTO clothes (type, design)
+    VALUES ("pants", "rainbow tie-dye");
+INSERT INTO clothes (type, design)
+    VALUES ("blazer", "black sequin");
+    
+ALTER TABLE clothes ADD price INTEGER default "unknown";
+SELECT*FROM clothes;
+--UPDATE - item 1 should be 10 dollars, item 2 should be 20 dollars, item 3 should be 30 dollars--
+
+-- Assign prices to items using UPDATE
+UPDATE clothes SET price = 10 WHERE type = 'dress';
+UPDATE clothes SET price = 20 WHERE type = 'pants';
+UPDATE clothes SET price = 30 WHERE type = 'blazer';
+
+-- Display the updated "clothes" table
+SELECT * FROM clothes;
+-- Now insert a new item into the table that has all three attributes filled in, including 'price'.
+
+INSERT INTO clothes (type,design ,price)VALUES ("skirt" ,"lolitta" ,50);
+SELECT * FROM clothes;
